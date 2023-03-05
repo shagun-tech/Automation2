@@ -4,8 +4,8 @@ import openpyxl
 import os 
 
 # reading the files
-f1 = pd.read_excel("C:\\Users\\I527297\\Desktop\\m2\\fsn\\FSM - Design.xlsx")
-f2 = pd.read_excel("C:\\Users\\I527297\\Desktop\\m2\\fsn\\FSM - Execution.xlsx")
+f1 = pd.read_excel("C:\\Users\\I527297\\Desktop\\m2\\fsn\\FSM - Design.xlsx")              #Address of design document
+f2 = pd.read_excel("C:\\Users\\I527297\\Desktop\\m2\\fsn\\FSM - Execution.xlsx")           #Address of execution document
 
 # merging the files
 f3 = f2[["ID","Provider","Owner","Delegates","Control Design"]].merge(f1[["Control Design","Name","Description","Internal","Category","Organization","ISO22301_2019","ISO27001_2013","ISO27017_2015","ISO27018_2019"]],
@@ -18,7 +18,7 @@ f3.to_excel("R.xlsx", index = False)
 
 ######################################################################################################################
 
-df = pd.read_excel("C:\\Users\\I527297\\Desktop\\m2\\R.xlsx")
+df = pd.read_excel("C:\\Users\\I527297\\Desktop\\m2\\R.xlsx")     #Address of merged excel "R.xlsx"
 
 col_name = 'Category'
 unique_values = df[col_name].unique()
